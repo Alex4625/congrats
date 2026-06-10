@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Ucapan selamat menyelesaikan ujian proposal untuk Kak Nadia.">
+  <title>Proposal Greeting Kak Nadia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <!-- Dekorasi background dibuat dari CSS, tanpa gambar tambahan. -->
+  <div class="decorations" aria-hidden="true">
+    <span class="sparkle sparkle-one"></span>
+    <span class="sparkle sparkle-two"></span>
+    <span class="sparkle sparkle-three"></span>
+    <span class="heart heart-one"></span>
+    <span class="heart heart-two"></span>
+    <span class="bubble bubble-one"></span>
+    <span class="bubble bubble-two"></span>
+  </div>
+
+  <main class="app-shell">
+    <!-- Tampilan pertama: kartu amplop. -->
+    <section class="view envelope-view is-active" id="envelopeView" aria-labelledby="envelopeTitle">
+      <div class="greeting-card">
+        <div class="envelope-wrap" aria-hidden="true">
+          <div class="envelope" id="envelope">
+            <div class="envelope-back"></div>
+            <div class="letter">
+              <span>Untuk Kak Nadia</span>
+              <strong>Congrats!</strong>
+            </div>
+            <div class="envelope-front"></div>
+            <div class="envelope-flap"></div>
+          </div>
+        </div>
+
+        <p class="eyebrow">Proposal mission complete</p>
+        <h1 id="envelopeTitle">ayok buka amplopnya kak hehe 💌</h1>
+        <button class="primary-button" id="openEnvelopeBtn" type="button">
+          Buka Amplop
+        </button>
+      </div>
+    </section>
+
+    <!-- Tampilan kedua: foto, ucapan, dan kontrol lagu. -->
+    <section class="view message-view" id="messageView" aria-labelledby="messageTitle">
+      <button class="back-button" id="backBtn" type="button">← Kembali</button>
+
+      <div class="message-panel">
+        <div class="photo-frame">
+          <img id="mainPhoto" src="./assets/foto.jpg" alt="Foto Kak Nadia">
+          <div class="photo-fallback" id="photoFallback" hidden>
+            Foto Kak Nadia
+          </div>
+        </div>
+
+        <div class="message-copy">
+          <p class="eyebrow">Yeay, satu tahap besar terlewati</p>
+          <h2 id="messageTitle">Selamat Menyelesaikan Ujian Proposalnya, Kak Nadia 🔥</h2>
+
+          <div class="message-text">
+            <p>Selamat menyelesaikan ujian proposalnya, Kak Nadia 🔥<br>Menyala teruss!</p>
+            <p>Akhirnya setelah sekian lama begadang ya, Kak. Semua capek, revisi, dan perjuangannya pelan-pelan mulai terbayar.</p>
+            <p>Sukses terus Kak Nadia, semoga lancar terus sampai skripsi nanti. Aminn 🤲✨</p>
+          </div>
+
+          <button class="music-button" id="musicToggleBtn" type="button">
+            Pause Lagu ⏸
+          </button>
+        </div>
+      </div>
+
+      <audio id="greetingAudio" src="./assets/lagu.mp3" preload="auto"></audio>
+    </section>
+  </main>
+
+  <script src="./script.js"></script>
+</body>
+</html>
