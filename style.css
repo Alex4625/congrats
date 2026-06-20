@@ -1,22 +1,17 @@
 :root {
-  --cream: #fff7e8;
-  --soft-pink: #ffd7df;
-  --blush: #ffedf1;
-  --white: #ffffff;
+  --cream: #fff8ec;
+  --paper: #ffffff;
   --gold: #f7c948;
-  --orange: #ff8a4c;
-  --coral: #ff6f61;
-  --ink: #3f2f35;
-  --muted: #7d6a70;
-  --shadow: 0 24px 70px rgba(151, 88, 72, 0.2);
+  --orange: #ff9f43;
+  --sage: #7fb285;
+  --sky: #9bd2f5;
+  --ink: #34333a;
+  --muted: #68656f;
+  --shadow: 0 24px 70px rgba(118, 92, 58, 0.18);
 }
 
 * {
   box-sizing: border-box;
-}
-
-[hidden] {
-  display: none !important;
 }
 
 html {
@@ -30,8 +25,8 @@ body {
   color: var(--ink);
   font-family: "Poppins", Arial, sans-serif;
   background:
-    radial-gradient(circle at 12% 16%, rgba(255, 255, 255, 0.88) 0 12%, transparent 13%),
-    linear-gradient(135deg, #fff8ec 0%, #ffe3ea 44%, #fff3d2 100%);
+    radial-gradient(circle at 12% 16%, rgba(255, 255, 255, 0.86) 0 12%, transparent 13%),
+    linear-gradient(135deg, #fff8ec 0%, #eaf7ee 48%, #eef8ff 100%);
 }
 
 button {
@@ -56,31 +51,33 @@ button {
   display: grid;
 }
 
-.envelope-view {
+.envelope-view,
+.message-view {
   place-items: center;
 }
 
 .message-view {
-  align-items: center;
-  justify-items: center;
   padding-top: 96px;
 }
 
-/* Kartu utama untuk tampilan amplop. */
-.greeting-card {
-  width: min(100%, 560px);
-  padding: clamp(28px, 5vw, 46px);
-  text-align: center;
-  border: 1px solid rgba(255, 255, 255, 0.75);
-  border-radius: 34px;
-  background: rgba(255, 255, 255, 0.72);
+.greeting-card,
+.message-panel {
+  border: 1px solid rgba(255, 255, 255, 0.82);
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.76);
   box-shadow: var(--shadow);
   backdrop-filter: blur(16px);
 }
 
+.greeting-card {
+  width: min(100%, 560px);
+  padding: clamp(28px, 5vw, 46px);
+  text-align: center;
+}
+
 .eyebrow {
   margin: 0 0 10px;
-  color: #a85f2f;
+  color: #8a6530;
   font-size: 0.78rem;
   font-weight: 700;
   letter-spacing: 0;
@@ -101,39 +98,35 @@ h1 {
 }
 
 h2 {
-  font-size: clamp(1.7rem, 4vw, 2.7rem);
+  font-size: clamp(1.9rem, 5vw, 3rem);
 }
 
 .primary-button,
-.music-button,
 .back-button {
   min-height: 48px;
   border: 0;
   cursor: pointer;
-  color: #3f2524;
+  color: #352817;
   font-weight: 700;
   transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
 }
 
-.primary-button,
-.music-button {
+.primary-button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   padding: 14px 24px;
   border-radius: 999px;
   background: linear-gradient(135deg, var(--gold), var(--orange));
-  box-shadow: 0 14px 28px rgba(255, 138, 76, 0.28);
+  box-shadow: 0 14px 28px rgba(255, 159, 67, 0.28);
 }
 
 .primary-button:hover,
-.music-button:hover,
 .back-button:hover {
   transform: translateY(-2px);
 }
 
 .primary-button:active,
-.music-button:active,
 .back-button:active {
   transform: translateY(0);
 }
@@ -143,7 +136,6 @@ h2 {
   opacity: 0.78;
 }
 
-/* Amplop CSS. */
 .envelope-wrap {
   display: grid;
   place-items: center;
@@ -168,17 +160,17 @@ h2 {
 
 .envelope-back {
   border-radius: 0 0 18px 18px;
-  background: linear-gradient(145deg, #ffd8b7, #ffb6c6);
-  box-shadow: 0 18px 34px rgba(132, 74, 56, 0.2);
+  background: linear-gradient(145deg, #ffd99d, #bfe7cf);
+  box-shadow: 0 18px 34px rgba(92, 84, 52, 0.2);
 }
 
 .envelope-front {
   z-index: 3;
   border-radius: 0 0 18px 18px;
   background:
-    linear-gradient(34deg, transparent 49.5%, rgba(255, 255, 255, 0.32) 50%, transparent 51%) left bottom / 50% 100% no-repeat,
-    linear-gradient(-34deg, transparent 49.5%, rgba(255, 255, 255, 0.32) 50%, transparent 51%) right bottom / 50% 100% no-repeat,
-    linear-gradient(145deg, #ffc9b5, #ff9fb8);
+    linear-gradient(34deg, transparent 49.5%, rgba(255, 255, 255, 0.35) 50%, transparent 51%) left bottom / 50% 100% no-repeat,
+    linear-gradient(-34deg, transparent 49.5%, rgba(255, 255, 255, 0.35) 50%, transparent 51%) right bottom / 50% 100% no-repeat,
+    linear-gradient(145deg, #ffd187, #95d6b5);
   clip-path: polygon(0 0, 50% 54%, 100% 0, 100% 100%, 0 100%);
 }
 
@@ -187,7 +179,7 @@ h2 {
   height: 112px;
   transform-origin: top center;
   border-radius: 18px 18px 8px 8px;
-  background: linear-gradient(145deg, #ffb7c7, #ffdfb2);
+  background: linear-gradient(145deg, #a9ddb9, #ffe0a3);
   clip-path: polygon(0 0, 100% 0, 50% 100%);
   transition: transform 760ms cubic-bezier(0.2, 0.82, 0.2, 1);
 }
@@ -201,8 +193,8 @@ h2 {
   margin: 22px auto 0;
   padding: 18px;
   border-radius: 18px;
-  background: var(--white);
-  box-shadow: 0 10px 22px rgba(105, 63, 57, 0.16);
+  background: var(--paper);
+  box-shadow: 0 10px 22px rgba(92, 80, 54, 0.16);
   transform: translateY(34px);
   transition: transform 760ms cubic-bezier(0.2, 0.82, 0.2, 1);
 }
@@ -214,7 +206,7 @@ h2 {
 }
 
 .letter strong {
-  color: var(--coral);
+  color: #4f8f68;
   font-family: "Quicksand", "Poppins", Arial, sans-serif;
   font-size: 1.45rem;
 }
@@ -230,59 +222,50 @@ h2 {
 
 .message-panel {
   display: grid;
-  grid-template-columns: minmax(230px, 0.86fr) minmax(280px, 1.14fr);
-  gap: clamp(24px, 4vw, 44px);
+  grid-template-columns: minmax(150px, 0.45fr) minmax(280px, 1fr);
+  gap: clamp(22px, 4vw, 42px);
   align-items: center;
-  width: min(100%, 1040px);
-  padding: clamp(22px, 4vw, 44px);
-  border: 1px solid rgba(255, 255, 255, 0.8);
-  border-radius: 34px;
-  background: rgba(255, 255, 255, 0.76);
-  box-shadow: var(--shadow);
-  backdrop-filter: blur(16px);
+  width: min(100%, 860px);
+  padding: clamp(24px, 5vw, 48px);
 }
 
-.photo-frame {
-  position: relative;
-  overflow: hidden;
-  aspect-ratio: 4 / 5;
-  border: 8px solid var(--white);
-  border-radius: 28px;
-  background: linear-gradient(135deg, var(--blush), var(--cream));
-  box-shadow: 0 18px 36px rgba(108, 70, 61, 0.18);
-  animation: photoRise 680ms ease 140ms both;
-}
-
-.photo-frame img,
-.photo-fallback {
-  width: 100%;
-  height: 100%;
-}
-
-.photo-frame img {
-  display: block;
-  object-fit: cover;
-}
-
-.photo-fallback {
+.message-badge {
   display: grid;
   place-items: center;
-  padding: 26px;
-  color: #9a6643;
-  text-align: center;
-  font-weight: 700;
+  justify-self: center;
+  width: clamp(150px, 24vw, 220px);
+  aspect-ratio: 1;
+  border: 8px solid rgba(255, 255, 255, 0.86);
+  border-radius: 24px;
+  color: #2f3d32;
   background:
-    linear-gradient(135deg, rgba(255, 255, 255, 0.55), transparent 48%),
-    linear-gradient(145deg, #fff3dc, #ffd7df);
+    linear-gradient(135deg, rgba(255, 255, 255, 0.58), transparent 48%),
+    linear-gradient(145deg, #fff1be, #bfe7cf 62%, #cfeeff);
+  box-shadow: 0 18px 36px rgba(77, 92, 63, 0.18);
+  animation: riseIn 680ms ease 120ms both;
+}
+
+.message-badge span {
+  font-family: "Quicksand", "Poppins", Arial, sans-serif;
+  font-size: clamp(4.2rem, 11vw, 6.5rem);
+  font-weight: 700;
+  line-height: 0.9;
+}
+
+.message-badge small {
+  margin-top: -20px;
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
 }
 
 .message-copy {
-  animation: photoRise 680ms ease 220ms both;
+  animation: riseIn 680ms ease 220ms both;
 }
 
 .message-text {
-  margin: 22px 0 26px;
-  color: #5d4b51;
+  margin: 22px 0 0;
+  color: #514f57;
   font-size: clamp(1rem, 2vw, 1.08rem);
   line-height: 1.78;
 }
@@ -302,11 +285,10 @@ h2 {
   z-index: 5;
   padding: 12px 18px;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.8);
-  box-shadow: 0 12px 28px rgba(104, 64, 58, 0.13);
+  background: rgba(255, 255, 255, 0.82);
+  box-shadow: 0 12px 28px rgba(80, 78, 63, 0.13);
 }
 
-/* Sparkle, hati, dan bubble kecil di background. */
 .decorations {
   position: fixed;
   inset: 0;
@@ -316,7 +298,7 @@ h2 {
 }
 
 .sparkle,
-.heart,
+.confetti,
 .bubble {
   position: absolute;
   display: block;
@@ -331,30 +313,12 @@ h2 {
   clip-path: polygon(50% 0, 61% 36%, 100% 50%, 61% 64%, 50% 100%, 39% 64%, 0 50%, 39% 36%);
 }
 
-.heart {
-  width: 20px;
-  height: 20px;
-  transform: rotate(45deg);
-  background: rgba(255, 111, 97, 0.58);
-  animation-name: floatHeart;
-}
-
-.heart::before,
-.heart::after {
-  content: "";
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background: inherit;
-}
-
-.heart::before {
-  left: -10px;
-}
-
-.heart::after {
-  top: -10px;
+.confetti {
+  width: 16px;
+  height: 28px;
+  border-radius: 4px;
+  background: var(--sage);
+  transform: rotate(18deg);
 }
 
 .bubble {
@@ -384,32 +348,20 @@ h2 {
   animation-delay: -4s;
 }
 
-.heart-one {
+.confetti-one {
   left: 9%;
   bottom: 18%;
+  background: var(--sky);
   animation-delay: -1s;
 }
 
-.heart-two {
+.confetti-two {
   top: 17%;
   right: 30%;
-  width: 15px;
-  height: 15px;
+  width: 12px;
+  height: 22px;
+  background: var(--orange);
   animation-delay: -3s;
-}
-
-.heart-two::before,
-.heart-two::after {
-  width: 15px;
-  height: 15px;
-}
-
-.heart-two::before {
-  left: -7.5px;
-}
-
-.heart-two::after {
-  top: -7.5px;
 }
 
 .bubble-one {
@@ -438,7 +390,7 @@ h2 {
   }
 }
 
-@keyframes photoRise {
+@keyframes riseIn {
   from {
     opacity: 0;
     transform: translateY(18px) scale(0.98);
@@ -461,17 +413,6 @@ h2 {
   }
 }
 
-@keyframes floatHeart {
-  0%,
-  100% {
-    transform: translateY(0) rotate(45deg);
-  }
-
-  50% {
-    transform: translateY(-18px) rotate(53deg);
-  }
-}
-
 @media (max-width: 760px) {
   .view {
     padding: 22px;
@@ -484,19 +425,13 @@ h2 {
 
   .greeting-card,
   .message-panel {
-    border-radius: 26px;
+    border-radius: 24px;
   }
 
   .message-panel {
     grid-template-columns: 1fr;
-    padding: 20px;
-  }
-
-  .photo-frame {
-    max-width: 360px;
-    width: 100%;
-    margin: 0 auto;
-    border-radius: 22px;
+    padding: 22px;
+    text-align: center;
   }
 
   .back-button {
@@ -504,13 +439,12 @@ h2 {
     left: 18px;
   }
 
-  .primary-button,
-  .music-button {
+  .primary-button {
     width: 100%;
   }
 
   .bubble,
-  .heart-two {
+  .confetti-two {
     display: none;
   }
 }
